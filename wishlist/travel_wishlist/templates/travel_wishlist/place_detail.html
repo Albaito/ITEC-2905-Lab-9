@@ -1,0 +1,16 @@
+{% extends 'travel_wishlist/base.html' %}
+{% block content %}
+
+<h2>{{ place.name }}</h2>
+
+{% if place.visited %}
+    <p>You have visited {{ place.name }}</p>
+{% else %}
+    <p>You have not visited {{ place.name }} yet.</p>
+
+    <form action="{% url 'place_was_visited' place.pk %}">
+
+    </form>
+{% endif %}
+
+{% endblock %}
